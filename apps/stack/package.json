@@ -29,7 +29,7 @@
     "@clerk/clerk-sdk-node": "^4.13.9",
     "@tsconfig/node16": "^16.1.1",
     "@upstash/redis": "^1.25.1",
-    "aws-cdk-lib": "2.84.0",
+    "aws-cdk-lib": "2.127.0",
     "aws-lambda": "^1.0.7",
     "constructs": "10.1.156",
     "nanoid": "^5.0.5",
