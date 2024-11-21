@@ -2,7 +2,7 @@
   "name": "pipeline",
   "private": true,
   "engines": {
-    "node": ">=v18.17.1"
+    "node": ">=20.11.0"
   },
   "scripts": {
     "build": "turbo build",
@@ -23,7 +23,7 @@
     "@ianvs/prettier-plugin-sort-imports": "4.0.2",
     "@libsql/client": "0.3.6",
     "@manypkg/cli": "0.21.1",
-    "@types/node": "20.4.4",
+    "@types/node": "20.11.17",
     "@types/prettier": "2.7.3",
     "drizzle-orm": "0.29.1",
     "drizzle-zod": "0.5.1",
