@@ -350,16 +350,6 @@ function getCommitter(gitIdentity: extract.CommittedEvent & { committerId: numbe
     }
   }
 
-  // This should do anything? This should be removed
-  const frags = gitIdentity.committerEmail.split("+");
-
-  if (frags.length > 1) {
-    const member = members.find((m) => Number(m.externalId) === Number(frags[0]));
-    if (member) {
-      return [member];
-    }
-  }
-
   let member = members.find((m) => m.email !== null && m.email?.toLowerCase() === gitIdentity.committerEmail?.toLowerCase());
   if (member) {
     return [member];
@@ -388,18 +378,6 @@ function getCommitter(gitIdentity: extract.CommittedEvent & { committerId: numbe
   member = members.find((m) => m.username !== null && compare(m.username, gitIdentity.committerName));
   if (member) {
     return splitMembersByEmail(member, gitIdentity.committerEmail);
-  }
-
-  if (frags.length > 1) {
-    return [{
-      externalId: Number(frags[0]),
-      forgeType: "github",
-      name: gitIdentity.committerName,
-      username: gitIdentity.committerName,
-      email: gitIdentity.committerEmail,
-      profileUrl: '',
-      avatarUrl: ''
-    }] satisfies MemberData[];
   }
 
   return [];
